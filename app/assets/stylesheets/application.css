@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    height: 100% !important;
+ }
+ main {
+    height: 100% !important;
+ }
+
+* {
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.blue {
+    background: #3678C2;
+}
+
+.container {
+    background: #F1F3F2;
+}
+
+.small-text{
+    font-size: 12px;
+}
+
+.medium-text{
+    font-size: 16px;
+}
+
+.cat-icon{
+    width: 60px;
+    height: 60px;
+}
+
+.logo {
+    height: 70px;
+    width: 150px;
+}

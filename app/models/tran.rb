@@ -1,5 +1,5 @@
 class Tran < ApplicationRecord
-    belongs_to : :groups,
+    belongs_to :groups,
     belongs_to :user,
 
     validates :amount, presence: true
