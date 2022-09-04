@@ -1,26 +1,24 @@
-<h2>Log in</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => 'p-3'}) do |f| %>
+    <h1 class="h3 mb-3 fw-normal ">Please Login</h1>
+    
+ 
+    <%= f.email_field :email, autofocus: true, class: 'form-control', id: "email", required:true,autocomplete: "email", placeholder: "email",class:'form-control form-control-lg mb-2'%>
+    <%= f.password_field :password,class: 'form-control', id: "password", required:true,placeholder: "password",class:'form-control form-control-lg mb-2' %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= f.submit "Log in", class: 'w-100 btn btn-lg btn-success ' %>
+  <div class='mt-1'>
+  <%= link_to "Sign-up", new_user_registration_path,class: 'w-100 btn btn-lg mt-1 btn-primary'  %>
+</div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+
+
+
+
+
+
+
+
+

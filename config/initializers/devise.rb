@@ -1,5 +1,22 @@
 # frozen_string_literal: true
 
+# Turbo doesn't work with devise by default.
+# Keep tabs on https://github.com/heartcombo/devise/issues/5446 for a possible fix
+# Fix from https://gorails.com/episodes/devise-hotwire-turbo
+class TurboFailureApp < Devise::FailureApp
+  def respond
+    if request_format == :turbo_stream
+      redirect
+    else
+      super
+    end
+  end
+
+  def skip_format?
+    %w(html turbo_stream */*).include? request_format.to_s
+  end
+end
+
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -14,11 +31,12 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '02e0ebd7a8cec18550de5848650c8da5c6c4df941277cb466bb8cf548cfbe2a9d3c98be310685c66309345a53d352d9c950631d25c978a996c3b37d9148f778f'
+  # config.secret_key = '302e8d957de7dd7a60290b7e926f272c06a259db2e02700324bbcd2c2e06a76b56e4925387618d56071a31b2496f044c3a9b0b9d535ce9fc6f088c99a36bb9ef'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
+  config.parent_controller = 'TurboDeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -126,7 +144,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '2c6978c12595f8a8b68c382a05818b9eb2d289d2c462c722ac90d0eaf9517b436071cc7e007dfc329fe160eeceb19e808e457ac5e23bd6e3acdab82198c5421d'
+  # config.pepper = '0e572941ca4025472af456e28cc3c71aaaeb32d7ed1c08ea5c45729394c60adcd9d337b30ba1d5b5102ce49177c15851f41da9f5d183e95afac5c6c0ed696e3a'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -281,6 +299,11 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
+  config.warden do |manager|
+    manager.failure_app = TurboFailureApp
+    #   manager.intercept_401 = false
+    #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+  end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

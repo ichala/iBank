@@ -1,4 +1,4 @@
-<div class="pos-f-t">
+<% if user_signed_in? %><div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="blue  p-4">
     <div class=" d-flex align-items-center justify-content-center">
@@ -7,13 +7,17 @@
       <span class="text-muted">Toggleable via the navbar brand.</span>
     </div>
   </div>
-  <nav class="navbar navbar-dark blue">
+  <nav class="navbar p-2 navbar-dark blue d-flex align-items-center justfy-content-around">
     <button class="navbar-toggler shadow-none" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <h2 class="text-white"> Title</h2>
+    <i class="fa-solid fa-magnifying-glass p-2 text-white"></i>
   </nav>
 </div>
 
-<div class="blue text-center text-white p-1">
+<div class="blue text-center text-white p-1 border-none">
 <h5>Page Title</h5>
   </div>
+  <% end %>
+  

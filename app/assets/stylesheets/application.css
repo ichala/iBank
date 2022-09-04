@@ -15,14 +15,19 @@
  */
 
  body {
-    height: 100% !important;
+    min-height: 100vh !important;
+ }
+
+ .field_with_errors{
+
+border: red 1px solid;
  }
  main {
-    height: 100% !important;
+    min-height:calc( 100vh ) !important;
  }
 
 * {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Proxima Nova', sans-serif !important;
 }
 
 .blue {
