@@ -26,8 +26,13 @@ border: red 1px solid;
     min-height:calc( 100vh ) !important;
  }
 
-* {
+*:not(i) {
     font-family: 'Proxima Nova', sans-serif !important;
+}
+
+.link-no{
+    text-decoration: none;
+    
 }
 
 .blue {

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   root "home#index"
 
   devise_scope :user do
@@ -8,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  resources 'groups', only: %w[new show create destroy]
+  resources 'trans', only: %w[new show create destroy]
 end
