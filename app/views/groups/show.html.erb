@@ -1,4 +1,28 @@
+<div class='text-center p-3'>
+<h1>All Transactions for <b><%= @owned_trans.name %></b></h1>
+<span class="badge badge-lg bg-primary ">total: <%= @owned_trans.trans.sum(:amount) %>$</span>
+</div>
+<% if @owned_trans.trans.length < 1 %>
+<div class='text-center p-3'>
+<p class='text-center text-md'>You have no transactions yet 😔</p>
+</div>
+<% end  %>
+  
+  
+  <ol class="list-group list-group-numbered p-3">
+  <% @owned_trans.trans.each do |card| %>
 
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">    <%= card.name %></div>
+      <%= distance_of_time_in_words(card.created_at, DateTime.now) %> ago
+    </div>
+    <span class="badge bg-primary rounded-pill"><%= card.amount %> $</span>
+  </li>
+
+
+<% end %>
+</ol>
 
 <div class="d-flex align-content-center justify-content-center">
 <%= link_to  "Add", new_tran_path , class:'btn btn-success'%>

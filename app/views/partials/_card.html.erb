@@ -14,7 +14,7 @@
         <p class="text-muted small-text justify-self-end"><%= distance_of_time_in_words(card.created_at, DateTime.now) %></p>
       </div>
        <div class='d-flex align-items-center justify-content-center w-25 ' >
-            <p class='text-italic '>40$</p>
+            <p class='text-italic link-no text-dark'><%= card.trans.sum(:amount) %> $</p>
       </div>
 
       </div>

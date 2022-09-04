@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @owned_trans = current_user.groups.includes(:trans).all
+    @owned_trans = current_user.groups.includes(:trans).find(params['id'])
   end
 
   def create
