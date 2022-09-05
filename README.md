@@ -7,12 +7,19 @@ Track your expenses with ease using iBank app (FullStack Rails App)
 ## Live Demo
 [Demo Link](https://ibank-app.herokuapp.com/)
 
+
+![BANJ](https://user-images.githubusercontent.com/89282221/188396260-3ac52211-014a-4cf8-8a6d-07f14b774031.gif)
+
 ## Built With
 
 - Ruby
 - Rails 7.0
 - Bootstrap 5
 - Rspec
+
+## Database
+
+![image](https://user-images.githubusercontent.com/89282221/188395678-93865be0-5892-4ac3-98a7-04ecc43a36f5.png)
 
 
 ### Prerequisites
