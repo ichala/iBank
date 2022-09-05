@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Tran, type: :model do
-  subject { Tran.create(name: 'TAX', amount: 33 ,user_id: 1,group_id: 1) }
+  subject { Tran.create(name: 'TAX', amount: 33, user_id: 1, group_id: 1) }
   before { subject.save }
 
   it 'name should be present' do
@@ -28,7 +28,4 @@ RSpec.describe Tran, type: :model do
     subject.amount = -1
     expect(subject).to_not be_valid
   end
-
-
-
 end
