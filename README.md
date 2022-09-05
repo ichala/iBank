@@ -1,24 +1,60 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# iBank App
 
-Things you may want to cover:
+Track your expenses with ease using iBank app (FullStack Rails App)
 
-* Ruby version
+## Live Demo
+[Demo Link](https://ibank-app.herokuapp.com/)
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby
+- Rails 7.0
+- Bootstrap 5
+- Rspec
 
-* Database creation
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+- Make sure you already installed Ruby version 3 or higher and Git.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Setup
 
-* Deployment instructions
+Clone the repository using the below commands.
 
-* ...
+- `git clone https://github.com/ichala/iBank.git `
+- `cd iBank`
+- `rails db:create db:migrate`
+- `rails server`
+
+### Usage
+
+Kindly modify the files as needed.
+
+## Author
+
+👤 **Ali Jandoubi**
+
+- GitHub: [@ichala](https://github.com/ichala)
+- LinkedIn: [@alijendoubi](https://www.linkedin.com/in/alijendoubi/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/aimalamiri/Rails-Recipe/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+- Hat tip to anyone whose code was used
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
