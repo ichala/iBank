@@ -10,7 +10,7 @@
   
   
   <ol class="list-group list-group-numbered p-3">
-  <% @owned_trans.trans.each do |card| %>
+  <% @owned_trans.trans.order(created_at: :desc).each do |card| %>
 
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">

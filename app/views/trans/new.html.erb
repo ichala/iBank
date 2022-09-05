@@ -13,7 +13,7 @@
     <%= form.text_field :name, required: true, autofocus: true, class: ' mb-3 form-control', id: "name", autocomplete: "Transaction name", placeholder: "Transaction name" %>
     <%= form.number_field :amount, required: true, class: ' mb-3 form-control', id: "Transaction", autocomplete: "Transaction", placeholder: "Transaction Amount" %>
     <%= form.label :list, "Select at least 1 category (ctrl+click for multiple)" %>
-    <%= form.select :group_id, Group.order(:name).pluck(:name, :id), {}, {:multiple => true,required:true,id: "list", :class => "form-select mb-3" } %>
+    <%= form.select :group_id, Group.order(:name).where(user:current_user).pluck(:name, :id), {}, {:multiple => true,required:true,id: "list", :class => "form-select mb-3" } %>
     <%= form.submit "Save", class: 'w-100 mb-3  btn btn-md btn-success', id: 'submit' %>
   <% end %>
 </div>
