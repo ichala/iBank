@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+
+<%= render 'partials/card' , locals: {
+    cat: @cat,
+  }%>
+
+<% else  %>
+<%= render 'partials/welcome' %>
+<% end %>

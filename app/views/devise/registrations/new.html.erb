@@ -1,0 +1,30 @@
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name),:html => {:class => 'p-3'})  do |f| %>
+
+    <h1 class="h3 mb-3 fw-normal ">Please sign up</h1>
+
+    <div class="form-floating mb-2">
+      <%= f.text_field :name, autofocus: true, class: 'form-control', id: "name", required:true,autocomplete: "name", placeholder: "John Doe" %>
+      <label for="name">Your name</label>
+    </div>
+    <div class="form-floating mb-2">
+      <%= f.email_field :email, autofocus: true, class: 'form-control', id: "email", required:true,autocomplete: "email", placeholder: "name@example.com" %>
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-floating mb-2">
+      <%= f.password_field :password,class: 'form-control', id: "password", required:true,placeholder: "password" %>
+      <label for="password">Password</label>
+    </div>
+    <div class="form-floating mb-2">
+      <%= f.password_field :password_confirmation, class: 'form-control', id: "Confirm",  required:true,placeholder: "Confirm password" %>
+      <label for="Confirm">Password</label>
+    </div>
+
+
+    <%= f.submit "Sign up", class: 'w-100 btn btn-lg btn-primary ' %>
+  <div class='mt-1'>
+  <%= link_to "Log in", new_user_session_path,class: 'w-100 btn btn-lg mt-1 btn-success'  %>
+</div>
+  <% end %>
+  
+</div>

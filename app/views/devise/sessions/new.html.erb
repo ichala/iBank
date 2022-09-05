@@ -1,0 +1,24 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => 'p-3'}) do |f| %>
+    <h1 class="h3 mb-3 fw-normal ">Please Login</h1>
+    
+ 
+    <%= f.email_field :email, autofocus: true, class: 'form-control', id: "email", required:true,autocomplete: "email", placeholder: "email",class:'form-control form-control-lg mb-2'%>
+    <%= f.password_field :password,class: 'form-control', id: "password", required:true,placeholder: "password",class:'form-control form-control-lg mb-2' %>
+
+    <%= f.submit "Log in", class: 'w-100 btn btn-lg btn-success ' %>
+  <div class='mt-1'>
+  <%= link_to "Sign-up", new_user_registration_path,class: 'w-100 btn btn-lg mt-1 btn-primary'  %>
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+

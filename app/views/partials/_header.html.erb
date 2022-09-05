@@ -1,0 +1,58 @@
+<% if user_signed_in? %><div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="blue  p-4">
+    <div class=" d-flex align-items-center justify-content-center">
+    <%= image_tag 'logo.png' ,class:"logo" %></div>
+  <ul>
+  <div class="list-group">
+  <a href="/" class="list-group-item list-group-item-action">Categories</a>
+  <a href="/groups/new" class="list-group-item list-group-item-action">Add Categories</a>
+  <a href="#" class="list-group-item list-group-item-action">Add Transaction</a>
+  <%= button_to  "Logout", destroy_user_session_path, :method => :delete,class:"list-group-item list-group-item-action bg-danger text-white" %>
+</div>
+  </ul>
+    </div>
+  </div>
+  <nav class="navbar p-2 navbar-dark blue d-flex align-items-center justfy-content-around">
+    <button class="navbar-toggler shadow-none"  data-turbolinks-permanent type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <% if controller.controller_name == 'home' %>
+        <h2 class="text-white">Categories</h2>
+    <% end %>
+      <% if controller.controller_name == 'groups' && controller.action_name != 'show' %>
+        <h2 class="text-white">Categories</h2>
+    <% end %>
+       <% if controller.action_name == 'show' %>
+        <h2 class="text-white">Transactions</h2>
+    <% end %>
+      <% if controller.controller_name == 'trans' && controller.action_name != 'show' %>
+        <h2 class="text-white">Transactions</h2>
+    <% end %>
+    
+   <%= link_to  raw('<i class="fa-solid fa-house p-2 text-white"></i>'), root_path %> 
+  </nav>
+</div>
+  <% if controller.controller_name == 'home' %>
+<div class="blue text-center text-white p-1 border-none">
+<h5>Categories List</h5>
+  </div>
+   <% end %>
+     <% if current_page?(new_group_path) %>
+<div class="blue text-center text-white p-1 border-none">
+<h5>New</h5>
+  </div>
+   <% end %>
+    <% if controller.action_name == 'show' %>
+<div class="blue text-center text-white p-1 border-none">
+<h5>List</h5>
+  </div>
+   <% end %>
+    <% if controller.controller_name == 'trans' %>
+<div class="blue text-center text-white p-1 border-none">
+<h5>New</h5>
+  </div>
+   <% end %>
+  <% end %>
+  
