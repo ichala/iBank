@@ -21,6 +21,7 @@ body {
 .field_with_errors {
   border: red 1px solid;
 }
+
 main {
   min-height: calc(100vh) !important;
 }
